@@ -21,20 +21,20 @@ git clone https://github.com/LeonardoSantan/repoweb-Front.git
 
 Acesse a pasta do projeto:
 
-cd repoweb-Front
+```cd repoweb-Front```
 
 Instale as dependências:
 
-npm install
+```npm install```
 # ou
-yarn
+```yarn```
 
 Inicie o servidor de desenvolvimento:
 
-npm run dev
+```npm run dev```
 # ou
-yarn dev
+```yarn dev```
 
 Acesse no navegador:
 
-http://localhost:5173
+```http://localhost:5173```
