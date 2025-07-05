@@ -1,0 +1,69 @@
+/* src/App.css */
+
+/* Definir uma variável CSS para a altura da Navbar */
+/* Ajuste este valor se sua Navbar for mais alta ou mais baixa */
+:root {
+    --navbar-height: 56px; /* Altura padrão da Navbar do Bootstrap */
+  }
+  
+  #root {
+    /* Removendo estilos globais que podem interferir */
+    max-width: none; /* Deixar as páginas controlarem sua própria largura */
+    margin: 0;
+    padding: 0;
+    text-align: left; /* Alinhamento padrão à esquerda para a maioria dos textos */
+  }
+  
+  /*
+    CORREÇÃO PARA O LAYOUT DO LOGIN:
+    No componente Login.jsx, as classes de flexbox (d-flex, etc.) estão no <Container>
+    em vez de estarem no <Row>. Isso faz com que o <Row> (que se torna um item flex)
+    encolha para o tamanho do seu conteúdo. A regra abaixo força o <Row> a ocupar
+    100% da largura do <Container> pai, corrigindo o problema de layout sem
+    precisar de alterar o ficheiro JSX.
+  */
+  .container.d-flex > .row {
+    width: 100%;
+  }
+  
+  
+  /* Estilo para o conteúdo principal para que ele comece abaixo da Navbar */
+  .main-content {
+    padding-top: var(--navbar-height); /* Empurra o conteúdo para baixo da Navbar */
+    min-height: calc(100vh - var(--navbar-height)); /* Garante que o conteúdo ocupa o restante da tela, útil para layouts pequenos */
+    padding-bottom: 2rem; /* Adiciona um padding na parte inferior para roláveis */
+  }
+  
+  /* Restante do seu CSS (se houver) */
+  .logo {
+    height: 6em;
+    padding: 1.5em;
+    will-change: filter;
+    transition: filter 300ms;
+  }
+  .logo:hover {
+    filter: drop-shadow(0 0 2em #646cffaa);
+  }
+  .logo.react:hover {
+    filter: drop-shadow(0 0 2em #61dafbaa);
+  }
+  
+  @keyframes logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @media (prefers-reduced-motion: no-preference) {
+    a:nth-of-type(2) .logo {
+      animation: logo-spin infinite 20s linear;
+    }
+  }
+  
+  .read-the-docs {
+    color: #888;
+  }
+  
